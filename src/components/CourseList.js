@@ -4,10 +4,14 @@ import TextField from '@material-ui/core/TextField'
 import * as contentful from 'contentful'
 import Course from '../components/Course'
 
+require('dotenv').config()
+
+const SPACE_ID = process.env.REACT_APP_SPACE_ID
+const ACCESS_TOKEN = process.env.REACT_APP_ACCESS_TOKEN
 
 const client = contentful.createClient({
-    space: process.env.SPACE_ID,
-    accessToken: process.env.ACCESS_TOKEN
+    space: SPACE_ID,
+    accessToken: ACCESS_TOKEN
 })
 
 class CourseList extends Component {
